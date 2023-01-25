@@ -3,16 +3,17 @@ import math
 class Sym:
 
     def __int__(self, txt, at):
+        
+        self.n = 0
+        self.has = {}
+        self.most = 0
+        self.mode = None
+
         if at: self.at = at
         else: self.at = 0
 
         if txt: self.txt = txt
         else: self.txt = ""
-
-        self.n = 0
-        self.has = {}
-        self.most = 0
-        self.mode = None
 
 
     def add(self, x: str):

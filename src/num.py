@@ -1,4 +1,5 @@
 import math
+from utils import rnd
 
 class Num:
 
@@ -9,15 +10,16 @@ class Num:
         self.hi = math.inf
         self.lo = -math.inf
 
-        if not txt: self.txt = ""
-        else:
-            self.txt = txt
-            if self.txt[-1] == '-': self.w = -1
-            else: self.w = 1
-
-
         if at: self.at = at
         else: self.at = 0
+
+        if txt: 
+            self.txt = txt
+            if self.txt[-1] == '-':
+                self.w = -1
+            else: 
+                self.w = 1
+        else: self.txt = ""
 
     def add(self, n):
         '''
@@ -42,4 +44,10 @@ class Num:
         Method for calculating Standard Deviation
         '''
         return (self.m2 < 0 or self.n < 2) and 0 or (self.m2 / (self.n - 1)) ** 0.5
+
+    def rnd(self,x,n) -> float:
+        if(x=='?'):
+            return x
+        else:
+            return rnd(x,n)
 
