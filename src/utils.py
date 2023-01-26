@@ -102,3 +102,13 @@ def eg(key, str, fun):
     egs[key] = fun
     global help
     help = help + '  -g '+ key + '\t' + str + '\n'
+
+# Method to read from Csv file
+def csv(sFilename, fun):
+    with open(sFilename, "r") as file:
+        t = []
+        for _, line in enumerate(file):
+            line =  line.strip().split(',')
+            l = list(map(coerce, line))
+            t.append(l)
+            fun(l)
