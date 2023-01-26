@@ -46,7 +46,10 @@ class Num:
         return (self.m2 < 0 or self.n < 2) and 0 or (self.m2 / (self.n - 1)) ** 0.5
 
     def rnd(self,x,n) -> float:
-        if(x=='?'):
+        '''
+        Helper method
+        '''
+        if x == '?':
             return x
         else:
             return rnd(x,n)
