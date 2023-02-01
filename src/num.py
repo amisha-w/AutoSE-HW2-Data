@@ -3,7 +3,7 @@ from utils import rnd
 
 class Num:
 
-    def __init__(self, txt, at):
+    def __init__(self, txt=None, at=None):
         self.n = 0
         self.mu = 0
         self.m2 = 0

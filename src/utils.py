@@ -1,6 +1,8 @@
 import math
 import re
 import sys
+import io
+
 sys.path.append("./src")
 from constants import *
 
@@ -37,20 +39,15 @@ def map(t, fun):
             u[k] = v
         else:
             u[1 + len(u)] = v
-    print("U in map: ", u)
     return u
 
 # map method 'fun'(k,v) over list (skip nil results)
 def kap(t, fun):
-    u = []
-    for k,v in enumerate(t):
-        o = fun(k,v)
-        v, k = o[0], o[1]
-        if k != 0:
-            u[k] = v
-        else:
-            u[1 + len(u)] = v
-    print("U in kap: ", u)
+    u = {}
+    for v in t:
+        k = t.index(v)
+        v, k = fun(k,v)
+        u[k or len(u)] = v
     return u
 
 #method that sorts keys
@@ -82,7 +79,7 @@ def coerce(s):
 
 # Method to print values
 def oo(t):
-    print(o(t, False))
+    o(t, False)
 
 # Method to format string values
 def o(t, is_keys = True):
@@ -103,12 +100,14 @@ def eg(key, str, fun):
     global help
     help = help + '  -g '+ key + '\t' + str + '\n'
 
-# Method to read from Csv file
-def csv(sFilename, fun):
-    with open(sFilename, "r") as file:
-        t = []
-        for _, line in enumerate(file):
-            line =  line.strip().split(',')
-            l = list(map(coerce, line))
-            t.append(l)
-            fun(l)
+def csv(filename, fun):
+    f = io.open(filename)
+    while True:
+        s = f.readline()
+        if s:
+            t = []
+            for s1 in re.findall("([^,]+)" ,s):
+                t.append(coerce(s1))
+            fun(t)
+        else:
+            return f.close()

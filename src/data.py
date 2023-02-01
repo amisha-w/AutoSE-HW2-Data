@@ -24,7 +24,7 @@ class DATA:
         '''
         Adds row
         '''
-        if self.cols :
+        if self.cols:
             if type(t) == list:
                 t = Row(t)
             self.rows.append(t)
@@ -39,5 +39,5 @@ class DATA:
                 val = col.mid()
             else:
                 val = col.div()
-            return col.rnd(val, nPlaces),col.txt
+            return col.rnd(val, nPlaces), col.txt
         return kap(cols or self.cols.y, fun)
