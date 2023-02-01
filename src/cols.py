@@ -14,11 +14,10 @@ class Col:
         self.klass = None
 
         for n,s in enumerate(t):
-
             if re.search(r'^[A-Z]', s) :
-                col=Num(n,s)   
+                col=Num(s,n)
             else:
-                col=Sym(n,s)    
+                col=Sym(s,n)
             self.all.append(col)
 
             if not s[-1]=='X': 
@@ -30,11 +29,11 @@ class Col:
                 else:
                     self.x.append(col)
                 
-    def add(self,row):
+    def add(self, row):
         '''
         Add row to columns
         '''
-        list = [self.x, self.y]
-        for col in list:
-            col.add(row.cells[col.at])
+        for list in [self.x, self.y]:
+            for col in list:
+                col.add(row.cells[col.at])
 

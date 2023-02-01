@@ -2,16 +2,13 @@ import math
 
 class Sym:
 
-    def __int__(self, txt, at):
-        
+    def __init__(self, txt=None, at=None):
         self.n = 0
         self.has = {}
         self.most = 0
         self.mode = None
-
         if at: self.at = at
         else: self.at = 0
-
         if txt: self.txt = txt
         else: self.txt = ""
 
@@ -26,7 +23,6 @@ class Sym:
                 self.has[x] = self.has[x] + 1
             else:
                 self.has[x] = 1
-
             if self.has[x] > self.most:
                 self.most = self.has[x]
                 self.mode = x
