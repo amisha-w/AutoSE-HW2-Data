@@ -4,6 +4,8 @@
  # `Lua to Python - AutoSE HW2 - Data`
 
 ![license](https://img.shields.io/github/license/amisha-w/AutoSE-HW2-Data)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7592725.svg)](https://doi.org/10.5281/zenodo.7592725)
+[![codecov](https://codecov.io/gh/amisha-w/AutoSE-HW2-Data/branch/main/graph/badge.svg?token=)](https://codecov.io/gh/amisha-w/AutoSE-HW2-Data)<br/>
 ![Test Cases](https://img.shields.io/github/actions/workflow/status/amisha-w/AutoSE-HW2-Data/tests.yml?label=Test%20Cases)
 ![Repo Size](https://img.shields.io/github/repo-size/amisha-w/AutoSE-HW2-Data)
 ![Issues](https://img.shields.io/github/issues-closed-raw/amisha-w/AutoSE-HW2-Data?color=yellow)
