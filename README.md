@@ -4,6 +4,7 @@
  # `Lua to Python - AutoSE HW2 - Data`
 
 ![license](https://img.shields.io/github/license/amisha-w/AutoSE-HW2-Data)
+![Test Cases](https://img.shields.io/github/actions/workflow/status/amisha-w/AutoSE-HW2-Data/tests.yml?label=Test%20Cases)
 ![Repo Size](https://img.shields.io/github/repo-size/amisha-w/AutoSE-HW2-Data)
 ![Issues](https://img.shields.io/github/issues-closed-raw/amisha-w/AutoSE-HW2-Data?color=yellow)
 ![Release](https://img.shields.io/github/v/release/amisha-w/AutoSE-HW2-Data?color=green)
